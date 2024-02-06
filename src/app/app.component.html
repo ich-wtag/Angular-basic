@@ -1,0 +1,11 @@
+<div class="container">
+  <input type="text" #inputEl />
+  <button (click)="onBtnClicked(inputEl)">Submit</button>
+  <app-demo [message]="inputVal" *ngIf="!doDestroy">
+    <p #tempParent>User has entered following : {{ inputVal }}</p>
+  </app-demo>
+  <button (click)="destroyCompomnent()">Show/Hide</button>
+</div>
+
+<br />
+<br />
