@@ -1,0 +1,27 @@
+<div class="ekart--product--conatiner">
+  <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+  <product-list [searchText]="searchText" #productListComponent></product-list>
+
+  <product-detail
+    *ngIf="productListComponent.selectedProduct"
+    [productListCom]="productListComponent"
+  ></product-detail>
+  <div class="ekart-featured-products">
+    <div class="ekart-featured-products-heading">
+      <h1>Latest Arrival in Popular Brands</h1>
+    </div>
+
+    <featured-brand>
+      <h3 class="title">New Arrivals in Nike</h3>
+      <button class="call-to-action">Show New Arrivals in Nike</button>
+    </featured-brand>
+    <featured-brand>
+      <h3 class="title">New Arrivals in Addidas</h3>
+      <button class="call-to-action">Show New Arrivals in Addidas</button>
+    </featured-brand>
+    <featured-brand>
+      <h3 class="title">New Arrivals in Reebok</h3>
+      <button class="call-to-action">Show New Arrivals in Reebok</button>
+    </featured-brand>
+  </div>
+</div>
